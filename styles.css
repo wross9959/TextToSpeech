@@ -1,0 +1,88 @@
+body {
+    font-family: 'Arial', sans-serif;
+    padding: 15px;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    /* background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 16%, rgba(0,212,255,1) 100%); */
+    width: 300px; /* Adjust the width as needed */
+    position: relative;
+}
+
+#textInput {
+    width: calc(100%);
+    height: 150px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    /* border: 1px solid #ccc; */
+    font-size: 14px;
+    resize: vertical;
+    background-color: rgba(255, 255, 255, 0.316); /* Ensure background contrasts with shadow for floating effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow for more depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+}
+#textInput:focus {
+    transform: translateY(-3px); /* Moves the input box up slightly when focused */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* Larger shadow on focus for a more pronounced floating effect */
+}
+#speakButton, #stopButton {
+    width: calc(100%); /* Adjust button width to fit the body */
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 5px;
+}
+#textInput, #speakButton, #stopButton {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Horizontal offset, vertical offset, blur radius, color */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+#speakButton:hover, #stopButton:hover {
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.5); /* Slightly larger shadow on hover for a nice effect */
+}
+#speakButton {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#stopButton {
+    background-color: #f44336;
+    color: white;
+    margin-top: 5px;
+}
+
+#speedControl {
+    width: calc(100% - 20px);
+    margin: 20px 0;
+}
+
+label {
+    font-size: 14px;
+    display: block;
+}
+/* Dark mode styles */
+#darkModeToggle {
+    position: absolute;
+    top: 5px; /* Adjust as necessary for top corner alignment */
+    right: 5px; /* Adjust as necessary for right corner alignment */
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above all other elements */
+}
+.dark-mode {
+    background: rgb(163,120,139);
+    background: radial-gradient(circle, rgba(163,120,139,1) 0%, rgba(33,51,96,1) 100%);
+    color: white;
+}
+
+.dark-mode #textInput, .dark-mode #speakButton, .dark-mode #stopButton {
+    background-color: #333;
+    color: white;
+    border-color: #444;
+}
+
+.dark-mode #textInput:focus, .dark-mode #speakButton:hover, .dark-mode #stopButton:hover {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1); /* Lighter shadow for dark mode */
+}
